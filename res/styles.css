@@ -1,0 +1,7 @@
+.stButton>button {
+    width: 100%;
+}
+
+div > .stImage {
+    align-items: center;
+}
