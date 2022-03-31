@@ -118,16 +118,16 @@ def inference(
             out = augment(out, data_augmentation)
             out = model.embed_image(out)
             if len(text) == 1:
-                loss = -torch.cosine_similarity(embed_text, out, -1)
+                loss = -similarity_factor * torch.cosine_similarity(embed_text, out, -1)
                 loss = loss.mean()
             else:
                 loss = []
-                for i in range(len(text)):
+                for j in range(len(text)):
                     alpha = (
-                        -similarity_factor if i == 0 else -(similarity_factor / 2)
+                        -similarity_factor if j == 0 else -(similarity_factor / 2)
                     )  # Weight the first prompt twice the rest
                     loss.append(
-                        alpha * torch.cosine_similarity(embed_text[i, :], out, -1)
+                        alpha * torch.cosine_similarity(embed_text[j, :], out, -1)
                     )
                 loss = (
                     torch.stack(loss, dim=0).sum().div((len(text) - 1) / 2 + 1)
