@@ -3,7 +3,7 @@ import os
 RESOURCES_PATH = "./res"
 CKPT_PATH = "./checkpoints"
 DATABASE_PATH = os.path.join(RESOURCES_PATH, "image_generation.db")
-DATABASE_INIT_SCRIPT= os.path.join(RESOURCES_PATH, "image_generation.sql")
+DATABASE_INIT_SCRIPT = os.path.join(RESOURCES_PATH, "image_generation.sql")
 INFERENCE_PATH = os.path.join(RESOURCES_PATH, "inferences")
 POSTER_PATH = os.path.join(RESOURCES_PATH, "poster")
 POSTER_SESSION_PATH = os.path.join(RESOURCES_PATH, "poster-session")
