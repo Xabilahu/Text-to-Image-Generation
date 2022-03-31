@@ -91,9 +91,11 @@ multiple [job_executor.py](job_executor.py) instances.
 ## Installation
 
 First, you will need to install PyTorch with GPU compatibility. Follow the installation instructions 
-[here](https://pytorch.org/get-started/locally/), and then run the command below:
+[here](https://pytorch.org/get-started/locally/), and then run the commands below:
 
 ```bash
+git clone --recurse-submodules https://github.com/Xabilahu/Text-to-Image-Generation.git
+cd Text-to-Image-Generation
 pip3 install -r requirements.txt
 ```
 
